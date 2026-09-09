@@ -1,0 +1,160 @@
+/* Norpac Controls CSS */
+
+body {
+	background-color:#ffffff;
+	margin: 13px 0px 13px 0px;
+	font-family: arial, verdana, helvetica, sans-serif; 
+	font-size: 12px; 
+	font-weight: normal;  
+	color: #000000; 
+	line-height: 16px;
+}
+
+
+td {
+	font-family: arial, verdana, helvetica, sans-serif; 
+	font-size: 12px; 
+	font-weight: normal;  
+	color: #000000; 
+	line-height: 16px;
+}
+
+a, a:link, a:visited { 
+	color: #000000; 
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #666666; 
+	text-decoration: none;
+}
+
+/* NAVIGATION LINKS */
+a.navigation, a.navigation:link, a.navigation:visited {
+	font-family: arial, verdana, helvetica, sans-serif; 
+	font-size: 11px; 
+	font-weight: bold; 
+	color: #e2e2d8; 
+	text-decoration: none;
+}
+
+a.navigation:hover { 
+	font-family: arial, verdana, helvetica, sans-serif; 
+	font-size: 11px; 
+	font-weight: bold; 
+	color: #e2e2d8; 
+	text-decoration: underline;
+}
+
+/* SIDEBAR PANEL */
+#headerSidebar {
+	font-family: arial, verdana, helvetica, sans-serif; 
+	font-size: 14px; 
+	font-weight: bold; 
+	color: #333333;
+}
+
+#contentSidebar {
+	font-family: arial, verdana, helvetica, sans-serif; 
+	font-size: 12px; 
+	font-weight: bold; 
+	color: #333333; 
+	line-height: 14px;
+}
+
+/* MAIN CONTENT AREA */
+#heading1 {
+	font-size: 16px; 
+	font-weight: bold; 
+	color: #000000; 
+}
+
+#heading2 {
+	 font-size: 14px;
+}
+
+#heading3 {
+	font-size: 12px;
+}
+
+
+.sectionTitle_about_us {
+	font-family: arial, verdana, helvetica, sans-serif; 
+	font-size: 20px; 
+	font-weight: bold; 
+	color: #9aabc1;
+}
+
+.sectionTitle_tcc {
+	font-family: arial, verdana, helvetica, sans-serif; 
+	font-size: 20px; 
+	font-weight: bold; 
+	color: #76874a;
+}
+
+.sectionTitle_solutions {
+	font-family: arial, verdana, helvetica, sans-serif; 
+	font-size: 20px; 
+	font-weight: bold; 
+	color: #c48133;
+}
+
+.sectionTitle_products {
+	font-family: arial, verdana, helvetica, sans-serif; 
+	font-size: 20px; 
+	font-weight: bold; 
+	color: #c9aa2f;
+}
+
+.sectionTitle_services {
+	font-family: arial, verdana, helvetica, sans-serif; 
+	font-size: 20px; 
+	font-weight: bold; 
+	color: #9fab80;
+}
+
+.sectionTitle_training {
+	font-family: arial, verdana, helvetica, sans-serif; 
+	font-size: 20px; 
+	font-weight: bold; 
+	color: #d6a770;
+}
+
+.sectionTitle_resources {
+	font-family: arial, verdana, helvetica, sans-serif; 
+	font-size: 20px; 
+	font-weight: bold; 
+	color: #d9c36d;
+}
+
+.sectionTitle_contact_us {
+	font-family: arial, verdana, helvetica, sans-serif; 
+	font-size: 20px; 
+	font-weight: bold; 
+	color: #9aabc1;
+}
+
+/* FOOTER */
+
+#footer {
+	font-family: arial, verdana, helvetica, sans-serif; 
+	font-size: 10px; 
+	font-weight: bold; 
+	color: #96A8BD; 
+	line-height: normal;
+}
+
+a.footerNav, a.footerNav:link, a.footerNav:visited {
+	font-family: arial, verdana, helvetica, sans-serif; 
+	font-size: 10px; 
+	font-weight: bold; 
+	color: #96A8BD; 
+	line-height: normal; 
+	text-decoration: none;
+}
+
+a.footerNav:hover {
+	color: #666666; 
+	text-decoration: none; 
+	line-height: normal;
+}

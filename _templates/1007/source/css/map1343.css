@@ -1,0 +1,86 @@
+/****************** Map Styles ********************/
+
+.map-container {position: relative;}
+#map-notice {position: absolute; bottom: 97px; transition: all 0.25s ease-in-out; width: 100%; pointer-events: none;}
+#map-notice .container {overflow: visible;}
+#map-notice .content {background-color: #ffffff; display: inline-flex; align-items: center; padding: 20px 15px 20px 20px; box-shadow: 0 2px 4px 0 rgba(170, 170, 170, 0.5); pointer-events: all;}
+#map-notice p { font-family: "Lora", serif; font-size: 24px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.5; letter-spacing: normal; color: #19262e; margin: 0px;}
+#map-notice a {line-height: 0px; display: block; margin-left: 15px;}
+#map-notice img {width: 26px;}
+#map-notice.close {opacity: 0; pointer-events: none;}
+@media screen and (max-width: 1023px) {
+	.map-container {display: none;}
+}
+
+
+/****************** Popup styles ******************/
+
+.infoBox {
+	-webkit-box-shadow: 4px 8px 26px -1px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 4px 8px 26px -1px rgba(0, 0, 0, 0.3);
+	box-shadow: 4px 8px 26px -1px rgba(0, 0, 0, 0.3);
+	color: #000;
+	font-size: 18px;
+	line-height: 18px;
+	position: relative;
+	transform: translate(0px, -25px) !important;
+	width: 341px;
+}
+.infoBox img {width: 15px; height: 15px; position: absolute; top: 14px; right: 14px; opacity: 0;}
+.infoBox::after {
+	content: '';
+	border-top: solid 15px #19262e;
+	border-right: solid 15px transparent;
+	border-left: solid 15px transparent;
+	position: absolute;
+	left: calc(50% - 15px);
+	bottom: -15px;
+}
+@media screen and (max-width: 700px) {
+	.infoBox {
+		transform: translate(40px, 35px) !important;
+	}
+}
+@media screen and (max-width: 450px) {
+	.infoBox {
+		transform: translate(25px, 35px) !important;
+	}
+}
+.infoWindow {
+	background-color: #19262e;
+	padding: 20px 0px 14px 0px;
+}
+.infoWindow .title { padding-left: 15px; font-family: "Lora", serif; font-size: 24px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.5; letter-spacing: normal; text-align: center; color: #eec580;}
+.infoWindow .location {margin-top: -7px;  font-family: "Lora", serif; font-size: 24px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.5; letter-spacing: normal; text-align: center; color: #ffffff;}
+.infoWindow .content {height: 0px; opacity: 0; pointer-events: none; transition: all 0.25s ease-in-out;}
+.infoWindow .content table {width: 100%;}
+.infoWindow .content td { padding: 8px 15px 8px 15px; font-family: "niveau-grotesk",sans-serif; font-size: 12px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.67; letter-spacing: normal; color: #ffffff; background-color: rgba(255,255,255,0.1); text-transform: uppercase; border-collapse: collapse; border: 1px solid #19262e;}
+.infoWindow .content td span {color: #eec580;}
+.infoWindow .project-link {text-align: center; height: 0px; opacity: 0; pointer-events: none; transition: all 0.25s ease-in-out;}
+.infoWindow .project-link a {font-family: "niveau-grotesk",sans-serif; font-size: 18px; font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.11; letter-spacing: normal; text-align: center; color: #eec580; transition: all 0.25s ease-in-out;}
+.infoWindow .project-link a i {margin-left: 10px;}
+.infoWindow .project-link a:hover {opacity: 0.6;}
+.infoWindow .expand-note {opacity: 0.61; font-family: "niveau-grotesk",sans-serif; font-size: 12px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.67; letter-spacing: 1px; text-align: center; color: #ffffff; text-transform: uppercase; margin-top: 4px;}
+.infoBox.open .content, .infoBox.open .project-link {height: initial; opacity: 1; pointer-events: all;}
+.infoBox.open img {opacity: 1;}
+.infoBox.open .infoWindow {padding: 31px 0px 18px 0px;}
+.infoBox.open .content {margin: 20px 0px 20px 0px;}
+.infoBox.open .expand-note {opacity: 0; height: 0; pointer-events: none;}
+
+
+
+/****************** Table Styles******************/
+.table-container {padding: 55px 0px 60px 0px;}
+#project-table {width: 100%;}
+#project-table th {font-family: "niveau-grotesk",sans-serif; font-size: 12px; font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.67; letter-spacing: normal; color: #ffffff; background-color: #19262e; text-transform: uppercase; padding: 20px 24px; white-space: nowrap; text-align: left; cursor: pointer;}
+#project-table .tablesorter-header-inner::after {content: '\f078'; font-family: FontAwesome; font-size: 12px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.67; letter-spacing: normal; color: #eec580; display: inline-block; margin-left: 10px;}
+#project-table th[aria-sort="descending"] .tablesorter-header-inner::after {transform-origin: center center; transform: rotate(180deg);}
+
+#project-table td {font-family: "niveau-grotesk",sans-serif; font-size: 14px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.43; letter-spacing: normal; color: #19262e; padding: 20px 24px; background-color: #ffffff; vertical-align: top; text-align: left; transition: all 0.25s ease-in-out;}
+#project-table tr:not(:last-of-type) td {border-bottom: 1px solid #ebebeb;}
+#project-table tbody tr {cursor: pointer;}
+#project-table tbody tr:hover td {background-color: #eec580;}
+
+@media screen and (max-width: 1080px) {
+	#project-table th, #project-table td {padding: 20px 12px;}
+}

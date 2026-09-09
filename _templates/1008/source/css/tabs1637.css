@@ -1,0 +1,201 @@
+/*==== BMCL Tabs 1 ====*/
+/* Color variables */
+/* Font families */
+/* Text Styles */
+/* Code for site */
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .nav-tabs {
+  margin: 0px;
+  padding: 0;
+  list-style: none;
+  display: flex; justify-content: space-between;
+  border-bottom: solid 1px #cacaca;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .nav-tabs > li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 24px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .nav-tabs > li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: #eec580;
+  opacity: 0;
+  transition: all 0.3s ease-in-out 0s;
+  top: initial;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .nav-tabs > li.has-sub::before {
+  content: "\f107";
+  font-family: "FontAwesome";
+  font-weight: 400;
+  font-size: 22px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: initial;
+  height: initial;
+  border-radius: initial;
+  background-color: transparent;
+  left: initial;
+  color: #ad8c32;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .nav-tabs > li.has-sub:hover ul.sub-tabs {
+  opacity: 1;
+  pointer-events: all;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .nav-tabs > li:not(.has-sub)::before {
+  content: attr(data-name);
+  height: 0;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-family: "niveau-grotesk", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: #273b48;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .nav-tabs > li ul.sub-tabs {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease-in-out;
+  padding: 12px 30px;
+  margin: 0px;
+  list-style: none;
+  background-color: #ffffff;
+  z-index: 1;
+  min-width: 235px;
+  right: 0px;
+  top: 100%;
+  border: solid 1px #cacaca;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .nav-tabs > li ul.sub-tabs li::before {
+  width: initial;
+  height: initial;
+  border-radius: initial;
+  background-color: transparent;
+  left: initial;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .nav-tabs > li ul.sub-tabs li::after {
+  width: initial;
+  height: initial;
+  border-radius: initial;
+  background-color: transparent;
+  left: initial;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .nav-tabs > li ul.sub-tabs > li {
+  text-align: left;
+  padding: 5px 0px;
+  font-family: "niveau-grotesk", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  color: #273b48;
+  margin: 0px;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .nav-tabs > li ul.sub-tabs > li:hover {
+  color: #000000;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .nav-tabs li {
+  font-family: "niveau-grotesk", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.25;
+  text-align: center;
+  color: #273b48;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .nav-tabs li.addtab {
+  width: 100px;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .nav-tabs li.current {
+  font-family: "niveau-grotesk", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: #273b48;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .nav-tabs li.current::after {
+  opacity: 1;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .nav-tabs li:hover {
+  font-family: "niveau-grotesk", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: #273b48;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .nav-tabs li:hover::after {
+  opacity: 1;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .tab-content {
+  display: none;
+  padding: 36px 0px 0px 0px;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .tab-content.active {
+  display: block;
+  animation-duration: 0.5s;
+  animation-name: fade-in;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .tab-content .element-bar {
+  display: none !important;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .tab-content .element-bar.showit {
+  display: block !important;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .tab-content > h2:first-of-type, .bmcl-tabs-1:not(#bmcl) .tabs-1 .tab-content > h3:first-of-type {
+  margin-top: 0;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .mobile-tabs {
+  display: none;
+  margin-bottom: 7px;
+  padding-top: 7px;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 select {
+  font-family: "niveau-grotesk", sans-serif;
+  text-align: center;
+  display: none;
+  cursor: pointer;
+  margin: 0;
+  outline: none;
+  padding: 10px 36px 10px 24px;
+  width: 100%;
+  max-width: 420px;
+  min-width: 260px;
+  border: solid 1px #C8C8C8;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .select-wrapper {
+  display: inline-block;
+  position: relative;
+}
+.bmcl-tabs-1:not(#bmcl) .tabs-1 .select-wrapper::after {
+  content: "\f107";
+  font-family: "FontAwesome";
+  font-weight: 400;
+  font-size: 22px;
+  position: absolute;
+  right: 21px;
+  top: 12px;
+  pointer-events: none;
+  color: #ad8c32;
+}
+
+@media screen and (max-width: 1280px) {
+  .bmcl-tabs-1:not(#bmcl) .tabs-1 .mobile-tabs, .bmcl-tabs-1:not(#bmcl) .tabs-1 select {
+    display: block;
+  }
+  .bmcl-tabs-1:not(#bmcl) .tabs-1 ul.nav-tabs {
+    display: none;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=tabs.css.map */
