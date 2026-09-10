@@ -29,6 +29,16 @@ function setMobile(){
 }
 setMobile();
 
+// ********************* BG VIDEO AUTOPLAY ********************* //
+(function(){
+  var bgvid = document.getElementById('bgvid');
+  if (bgvid) {
+    bgvid.muted = true;
+    var playPromise = bgvid.play();
+    if (playPromise !== undefined) { playPromise.catch(function(){}); }
+  }
+})();
+
 // ********************* FANCY BOX ********************* //
 $(".fancybox").fancybox({
     fitToView   : true,
