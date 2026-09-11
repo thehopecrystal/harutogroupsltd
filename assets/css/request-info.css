@@ -1,0 +1,53 @@
+.form-group { margin-bottom:20px; clear: both; position: relative; }
+.form-group:after, .form-group:after { content: " "; visibility: hidden; display: block; height: 0; clear: both; }
+.form-group label { display:block; line-height:26px; color: #6d6d6d; padding-bottom: 15px;}
+.form-group label.check-label { width:auto; float:none; display: inline-block; }
+.form-subgroup { float: left; line-height: 40px; }
+.request-info input[type=text],.request-info textarea,.request-info select { width:80%; border:1px solid #C8C8C8; -webkit-border-radius: 0px; -khtml-border-radius:0px; -moz-border-radius:0px; border-radius:0px; margin:0; padding:10px 30px; box-sizing: border-box;}
+.request-info input[type=text]::-webkit-input-placeholder, .request-info textarea::-webkit-input-placeholder { color: #cccccc; font-weight: 400; font-family:"utopia-std",sans-serif;;}
+.request-info input[type=text]:-moz-placeholder, .request-info textarea:-moz-placeholder { color: #cccccc; font-weight: 400; font-family:"utopia-std",sans-serif;;}
+.request-info input[type=text]::-moz-placeholder, .request-info textarea::-moz-placeholder { color: #cccccc; font-weight: 400; font-family:"utopia-std",sans-serif;;}
+.request-info input[type=text]:-ms-input-placeholder, .request-info textarea:-ms-input-placeholder { color: #cccccc; font-weight: 400; font-family:"utopia-std",sans-serif;;}
+.request-info select { background:#ffffff url(../images/forms/selectarrow3.png) no-repeat right center ; width: 80%;}
+.request-info select::-ms-expand { /* for IE 11 */
+    display: none;
+}
+.request-info textarea{ height:200px; width:80%; font-family: "PT Sans", sans-serif !important;}
+.request-info .error input[type=text] { border:1px solid #ee4036 !important;}
+.error-tooltip { left:33%; display: none; position: absolute; top: -9px; color: #ffffff; padding: 10px 15px; font-size: 12px; background: #333; width: 250px; opacity: 0; -webkit-transition: all 2s ease-in-out; -moz-transition: all 2s ease-in-out; transition: all 2s ease-in-out; }
+.error-tooltip:before { content:" "; border-style:solid; border-width:10px 12px 0px 12px; border-color:#333 transparent transparent transparent; position:absolute; bottom:-10px; }
+.show-tooltip .error-tooltip { display: inline-block; -moz-animation: tooltip 5s 1; animation: tooltip 5s 1; -webkit-animation: tooltip 5s 1; }
+
+
+.request-info input[type=checkbox] { position: absolute; overflow: hidden; clip: rect(0 0 0 0); height: 1px; width: 1px; margin: -1px; padding: 0; border: 0; }
+.request-info input[type=checkbox] + label { background-image:url(../images/forms/unchecked3.png); padding:0px 0 5px 47px; /*height:30px;*/ display:inline-block; line-height:30px; background-repeat:no-repeat; background-position: 0 0; font-size:14px; vertical-align:middle; cursor:pointer; color: #6d6d6d;}
+.request-info input[type=checkbox]:checked + label{ background-image:url(../images/forms/checked3.png); }
+/*.request-info input[type=submit] { padding: 5px 0; width: 200px; background: #596074; padding: 20px 0px; color: #fff; text-transform: uppercase; cursor: pointer; font-size: 14px; font-weight: 700; margin: 0 auto; display: inherit; -webkit-appearance: none; border: 2px solid #596074; letter-spacing: 1px; -webkit-box-shadow: none; box-shadow: none; -webkit-appearance: none; border-radius: 0; -webkit-border-radius:0;
+}
+.request-info input[type="button"] {-webkit-appearance: none;border-radius: 0;}
+input[type=submit]:hover { background: #F28C64; color: #FFF; border: 2px solid #F28C64;}*/
+.request-info .signup-submit {clear: both;}
+.request-info input[type=submit] {background-color: transparent; border: transparent; margin-top: 30px; color: #ad8c32; padding: 0px;}
+.request-info input[type=submit]:focus {outline: none;}
+.request-info .signup-submit::after {display: inline-block; content: '\f18e'; font-family: FontAwesome; padding-left: 3px;color: #ad8c32;}
+
+#error-message-box { display: none; background: #ee4036; color:#FFF; padding:30px; position: relative; top:0; left:0; width: 100%; margin-bottom: 30px;}
+body.ri-error #error-message-box { display: block; }
+body.ri-error #error-message-box .fa { font-size: 25px; margin: 0 35px 0 0; float: left; }
+body.ri-error #main { padding-top: 20px;}
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width:990px) {
+body.ri-error #main { padding-top: 40px;}
+}
+@media screen and (max-width:767px) {
+body.ri-error #main { padding-top: 80px;}
+}
+@media screen and (max-width:736px) {
+	.form-group label, .request-info input[type=text],.request-info textarea,.request-info select { width:100%; }
+	.error-tooltip { left:0; }
+}
+@media screen and (max-width:540px) {
+body.ri-error #main { padding-top: 120px;}
+}
