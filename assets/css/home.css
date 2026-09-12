@@ -440,8 +440,6 @@ footer .nav ul.sub a {color: #fefefe; transition: all 0.25s ease-in-out;}
 footer .nav ul.sub a:hover {color: #eec580;}
 footer .extra {float: left; width: 40%;}
 footer .copy {color: #a4a4a4; float: left;}
-footer .blender {color: #a4a4a4; float: right;}
-footer .blender a {text-transform: uppercase; color: #eec580; font-weight: 700;}
 
 /* Scroll Animation */
 @-webkit-keyframes marquee {
@@ -513,7 +511,7 @@ footer .container .hold:nth-of-type(1) {padding: 55px 0px 45px 0px}
 footer .container .hold:nth-of-type(2) {padding-bottom: 45px;}
 footer .nav {display: none;}
 footer .extra {float: none; width: 100%;}
-footer .copy, footer .blender  {float: none; text-align: center;}
+footer .copy  {float: none; text-align: center;}
 #tick-scroll {font-size: 25px; line-height: 90px; height: 90px;}
 #tick-scroll .scroller {-webkit-animation: marquee 40s linear infinite;animation: marquee 40s linear infinite;}
 #tick-scroll .scroller span.spanner {padding-left: 40px;}
