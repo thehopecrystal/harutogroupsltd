@@ -35,15 +35,31 @@ The original HTTrack capture contained a lot of server-only and mirror-junk refe
 | `templates/2/source/spacer.html` (saved 404 page used as img src) | `assets/images/spacer.gif` (real 1px spacer) |
 | `assets/backup/`, `nul`, HTTrack mirror banners, dead ie/edge CSS blocks, dead hubspot/jquery.cookie script blocks | removed |
 
+## Responsive / mobile navigation fix
+
+The navbar was dead on every page for two stacked reasons, both fixed:
+
+1. **jQuery never loaded** — all 330 pages referenced jQuery via broken local mirror paths (`../../cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js` → 404). Without jQuery, `main.js`'s `$` threw immediately, so the hamburger click handler (`$('.menu-icon').on('click touch', …)`) and the slide-in mobile menu never ran. jQuery 3.1.1 (plus fancybox 3.5.7 and font-awesome 4.7.0, which were equally broken) is now served locally from `assets/vendor/` and all references point there.
+2. **The mobile/desktop nav switch was user-agent-only** — `setMobile()` added the `body.mobile` class (which hides the desktop header and shows the mobile hamburger menu) purely by UA sniffing, so a resized desktop window never switched to the mobile nav. It now also switches at the theme's 900px breakpoint (`detectmob() || window.innerWidth <= 900`), in both `main.js` (inner pages) and `home.js` (homepage).
+
+Also fixed as part of the mobile pass:
+
+| Before | After |
+|---|---|
+| `<meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">` (all 330 pages — pinch-zoom disabled) | `<meta name="viewport" content="width=device-width, initial-scale=1">` |
+| External CDN references (cdnjs, jsdelivr `403.5.7` mangled path, googleapis) | localized under `assets/vendor/{jquery.min.js, font-awesome/, fancybox3/}` — site now has zero external runtime dependencies |
+| Dead mirror comment blocks (`<!-- INCLUDE CSS: … -->`, featherlight/normalize/cookieconsent links) | removed |
+
 ## Verification
 
 A full link/asset audit was run across all 713 HTML pages (regex scan of every `href`, `src`, `srcset`, `poster`, `data-*` and CSS `url()` reference):
 
 - **Baseline (before cleanup): 128 broken targets**
 - **After cleanup: 106 broken targets — 22 fixed, 0 newly broken**
+- **After responsive nav fix: 91 broken targets — 37 fixed in total, 0 newly broken**
 - All rewritten pages spot-checked for rendering-critical regions (CSS/fonts/nav/images/videos)
 
-The remaining 106 broken targets are **pre-existing mirror artifacts**: links to content that was never captured (Cloudflare CDN helper scripts, old CMS module URLs, external galleries, `#`-anchors on removed pages). None were introduced by this cleanup.
+The remaining 91 broken targets are **pre-existing mirror artifacts**: links to content that was never captured (old CMS module URLs, external galleries, dead article cross-links). None were introduced by these changes.
 
 ## Local preview
 

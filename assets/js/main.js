@@ -19,7 +19,7 @@ function detectmob() {                        // function to test if on a mobile
   }
 }
 function setMobile(){
-  if(detectmob()){
+  if(detectmob() || window.innerWidth <= 900){
     $('body').addClass('mobile');
   } else {
     $('body').removeClass('mobile');
