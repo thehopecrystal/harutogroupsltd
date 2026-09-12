@@ -139,7 +139,7 @@ header + section {margin-top: 70px;}
     -webkit-transition:all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out;
     border-width: 0px;}
-#mobile-head-hold .menu-icon span :nth-child(1) {
+#mobile-head-hold .menu-icon span:nth-child(1) {
     top:0px;
     -ms-transform-origin: 100% 0%;
     -webkit-transform-origin: 100% 0%;
@@ -909,4 +909,12 @@ body.str-whistler.cat-projects.sub-cat-united_states main #content .bmcl-tabs-1 
 .project-cta-btn:focus {
   outline: 2px solid #8f7428;
   outline-offset: 2px;
+}
+/*-------------- Responsive nav fallback (pure CSS, works without JS) --------------*/
+@media screen and (max-width: 900px) {
+  #head-hold {display: none !important;}
+  #mobile-head-hold, #mobile-menu-hold {display: block !important;}
+}
+@media screen and (min-width: 901px) {
+  #mobile-head-hold, #mobile-menu-hold {display: none !important;}
 }

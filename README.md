@@ -1,6 +1,6 @@
 # Haruto Groups Ltd. — Static Website Mirror
 
-A cleaned-up, self-contained static mirror of `harutogroupsltd.com`, originally captured with HTTrack. All pages have been normalized to load their assets from **relative, canonical paths** so the site works as a fully self-contained static bundle (open directly, or serve from any web root / subdirectory).
+A cleaned-up static mirror of `harutogroupsltd.com`, originally captured with HTTrack. All pages have been normalized to load their assets from **relative, canonical paths** and all third-party libraries from **CDNs**, so the site works as a self-contained static bundle (serve from any web root or subdirectory).
 
 ## Repository layout
 
@@ -16,9 +16,21 @@ assets/
   images/                  All images (incl. media/, logos/, photos/)
   documents/               PDFs (reports, presentations, policies)
   fonts/                   Webfonts
-  vendor/                  3rd-party libs (jquery, slick, wow, counterup…)
+  vendor/                  Only site-specific glue (photoswipe init, CF email-decode);
+                             all third-party libraries load from CDNs
 favicon.ico / manifest…
 ```
+
+### CDN dependencies
+
+| Library | CDN |
+|---|---|
+| jQuery 3.7.1 (+ migrate 3.4.1 on the homepage) | cdnjs |
+| Font Awesome 4.7.0 | cdnjs |
+| FancyBox 3.5.7 | cdnjs |
+| FancyBox 2.1.5 (homepage video lightbox) | cdnjs |
+| PhotoSwipe 4.1.1 (+ skin) | cdnjs |
+| TableSorter 2.31.3 | jsDelivr |
 
 ## What was cleaned up (mirror normalization)
 
@@ -47,8 +59,9 @@ Also fixed as part of the mobile pass:
 | Before | After |
 |---|---|
 | `<meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">` (all 330 pages — pinch-zoom disabled) | `<meta name="viewport" content="width=device-width, initial-scale=1">` |
-| External CDN references (cdnjs, jsdelivr `403.5.7` mangled path, googleapis) | localized under `assets/vendor/{jquery.min.js, font-awesome/, fancybox3/}` — site now has zero external runtime dependencies |
-| Dead mirror comment blocks (`<!-- INCLUDE CSS: … -->`, featherlight/normalize/cookieconsent links) | removed |
+| Nav switch relied on JS only (`body.mobile` class) | Pure-CSS fallback added at the 900px breakpoint — the header/mobile-menu switch works even with JS disabled |
+| Hamburger's first bar rule dead (`span :nth-child(1)` selector typo with stray space) | fixed in both `main.css` and `home.css` |
+| Third-party libs on local vendor paths | all on CDNs (see table above); jQuery-migrate added on the homepage so FancyBox 2 works under jQuery 3 |
 
 ## Verification
 

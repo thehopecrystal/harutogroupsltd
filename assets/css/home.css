@@ -128,7 +128,7 @@ header + section {margin-top: 40px;}
     -webkit-transition:all 0.25s ease-in-out; 
     transition: all 0.25s ease-in-out;
     border-width: 0px;}
-#mobile-head-hold .menu-icon span :nth-child(1) { 
+#mobile-head-hold .menu-icon span:nth-child(1) { 
     top:0px; 
     -ms-transform-origin: 100% 0%;
     -webkit-transform-origin: 100% 0%;
@@ -851,3 +851,11 @@ section#news .news-item:last-of-type {border-right: solid #0E171D 1px;}
 .fa.fa-twitter::before{ content:"𝕏"; }
 
 /* body.str-whistler.cat-projects.sub-cat-united_states .nav-tabs { display: none; } */
+/*-------------- Responsive nav fallback (pure CSS, works without JS) --------------*/
+@media screen and (max-width: 900px) {
+  #head-hold {display: none !important;}
+  #mobile-head-hold, #mobile-menu-hold {display: block !important;}
+}
+@media screen and (min-width: 901px) {
+  #mobile-head-hold, #mobile-menu-hold {display: none !important;}
+}
